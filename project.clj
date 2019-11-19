@@ -6,6 +6,7 @@
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [org.postgresql/postgresql "42.2.8.jre7"]
                  [seancorfield/next.jdbc "1.0.10"]
-                 [aero "1.1.3"]]
+                 [aero "1.1.3"]
+                 [hikari-cp "2.9.0"]]
   :repl-options {:init-ns konkan.core}
   :main konkan.core)
