@@ -1,0 +1,3 @@
+{:db-spec
+ #profile {:default "jdbc:postgresql://konkan:dev@localhost:13100/konkan_dev"
+           :test    "jdbc:postgresql://konkan:test@localhost:13200/konkan_test"}}
