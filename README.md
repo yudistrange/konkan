@@ -1,4 +1,6 @@
 # konkan
+[![Build Status](https://travis-ci.com/yudistrange/konkan.svg?branch=master)](https://travis-ci.com/yudistrange/konkan)
+
 Learn you some konkani for good
 
 ## License
