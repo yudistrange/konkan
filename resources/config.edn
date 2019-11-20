@@ -1,0 +1,23 @@
+{:db-spec
+ #profile {:default {:auto-commit        true
+                     :minimum-idle       10
+                     :maximum-pool-size  10
+                     :pool-name          "db-pool"
+                     :adapter            "postgresql"
+                     :username           "konkan"
+                     :password           "dev"
+                     :database-name      "konkan_dev"
+                     :server-name        "localhost"
+                     :port-number        13100
+                     :register-mbeans    false}
+           :test    {:auto-commit        true
+                     :minimum-idle       10
+                     :maximum-pool-size  10
+                     :pool-name          "db-pool-test"
+                     :adapter            "postgresql"
+                     :username           "konkan"
+                     :password           "test"
+                     :database-name      "konkan_test"
+                     :server-name        "localhost"
+                     :port-number        13200
+                     :register-mbeans    false}}}

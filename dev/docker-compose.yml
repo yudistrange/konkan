@@ -1,0 +1,24 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+services:
+  dev_db:
+    image: postgres:12-alpine
+    ports:
+      - 13100:5432
+    environment:
+      POSTGRES_USER: "konkan"
+      POSTGRES_PASSWORD: "dev"
+      POSTGRES_DB: "konkan_dev"
+    volumes:
+      - ./pg/data:/var/lib/postgresql/data:rw
+
+  test_db:
+    image: postgres:12-alpine
+    ports:
+      - 13200:5432
+    environment:
+      POSTGRES_USER: "konkan"
+      POSTGRES_PASSWORD: "test"
+      POSTGRES_DB: "konkan_test"
+    volumes:
+      - ./pg/test_data:/var/lib/postgresql/data:rw
