@@ -1,0 +1,6 @@
+;; resources/migrations/001-languages.edn
+{:up   ["CREATE TABLE languages (id int,
+                                 name text,
+                                 created_at timestamp with time zone,
+                                 updated_at timestamp with time zone);"]
+ :down ["DROP TABLE languages;"]}
