@@ -7,6 +7,7 @@
                  [org.postgresql/postgresql "42.2.8.jre7"]
                  [seancorfield/next.jdbc "1.0.10"]
                  [aero "1.1.3"]
-                 [hikari-cp "2.9.0"]]
+                 [hikari-cp "2.9.0"]
+                 [ragtime "0.8.0"]]
   :repl-options {:init-ns konkan.core}
   :main konkan.core)
