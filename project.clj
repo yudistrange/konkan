@@ -5,7 +5,8 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [org.postgresql/postgresql "42.2.8.jre7"]
-                 [seancorfield/next.jdbc "1.0.10"]
+
+                 [seancorfield/next.jdbc "1.0.10" :exclusions [org.clojure/clojure]]
                  [aero "1.1.3"]
                  [hikari-cp "2.9.0"]
                  [ragtime "0.8.0"]]
