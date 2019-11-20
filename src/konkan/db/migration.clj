@@ -1,10 +1,10 @@
 (ns konkan.db.migration
   (:require [ragtime.repl :as ragtime]
             [ragtime.jdbc :as jdbc]
-            [konkan.db.pool :as pool]))
+            [konkan.db.pool :as db-pool]))
 
 (defn- config []
-  {:datastore  (jdbc/sql-database {:datasource @pool/connection})
+  {:datastore  (jdbc/sql-database {:datasource (db-pool/get-connection)})
    :migrations (jdbc/load-resources "migrations")})
 
 (defn migrate []
