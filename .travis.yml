@@ -1,2 +1,17 @@
 language: clojure
+
+addons:
+  postgresql: 9.4
+
+env:
+  global:
+  - PGPORT=5432
+  - CONFIG_PROFILE=ci
+
+before_script:
+  - psql -c "CREATE DATABASE konkan_ci;" -U postgres
+  - psql -c "CREATE USER konkan WITH PASSWORD 'ci';" -U postgres
+  - psql -c "ALTER USER konkan WITH SUPERUSER;" -U postgres
+  - lein deps
+
 script: lein test
