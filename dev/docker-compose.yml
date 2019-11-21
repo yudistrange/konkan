@@ -11,6 +11,8 @@ services:
       POSTGRES_DB: "konkan_dev"
     volumes:
       - ./pg/data:/var/lib/postgresql/data:rw
+    networks:
+      - konkan_dev
 
   test_db:
     image: postgres:12-alpine
@@ -22,3 +24,9 @@ services:
       POSTGRES_DB: "konkan_test"
     volumes:
       - ./pg/test_data:/var/lib/postgresql/data:rw
+    networks:
+      - konkan_test
+
+networks:
+  konkan_dev:
+  konkan_test:

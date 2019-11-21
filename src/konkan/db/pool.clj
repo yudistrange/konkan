@@ -3,7 +3,7 @@
             [clojure.java.jdbc :as jdbc]
             [konkan.config :as config]))
 
-(defonce connection (atom nil))
+(defonce ^:private connection (atom nil))
 
 (defn init!
   ([]
@@ -14,3 +14,6 @@
    (swap! connection
           (fn [old-ds]
             (hikari/make-datasource db-spec)))))
+
+(defn get-connection []
+  @connection)
