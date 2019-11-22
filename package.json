@@ -1,0 +1,30 @@
+{
+  "name": "konkan",
+  "version": "1.0.0",
+  "description": "learn some konkani",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "create-react-class": "^15.6.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yudistrange/konkan.git"
+  },
+  "author": "yudistrange",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yudistrange/konkan/issues"
+  },
+  "homepage": "https://github.com/yudistrange/konkan#readme"
+}

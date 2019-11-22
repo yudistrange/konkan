@@ -11,3 +11,6 @@ pom.xml.asc
 .hgignore
 .hg/
 /dev/pg
+/resources/public/assets/build/
+/node_modules
+/.shadow-cljs

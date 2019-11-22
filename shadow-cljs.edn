@@ -1,0 +1,11 @@
+{:source-paths ["src/cljs/"]
+ :dependencies [[reagent "0.8.1"]]
+ :dev-http     {8080 {:root      "resources/public"
+                      :proxy-url "http://localhost:3000"}}
+ :builds       {:konkan-ui {:output-dir "resources/public/assets/build/"
+                            :asset-path "/assets/build"
+                            :target     :browser
+                            :modules    {:main {:init-fn konkan-ui.core/main!}}
+                            :devtools   {:after-load konkan-ui.core/reload!
+                                         :http-root  "resources/public"
+                                         :http-port  8080}}}}
