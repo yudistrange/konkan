@@ -11,4 +11,6 @@
                  [hikari-cp "2.9.0"]
                  [ragtime "0.8.0"]]
   :repl-options {:init-ns konkan.core}
-  :main konkan.core)
+  :main konkan.core
+  :source-paths ["src/clj" "src/cljs"]
+  :test-paths ["test/clj" "test/cljs"])
