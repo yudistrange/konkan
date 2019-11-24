@@ -18,3 +18,6 @@
 
 (defn db-spec []
   (:db-spec @entries))
+
+(defn http-spec []
+  (:http-spec @entries))

@@ -1,6 +1,11 @@
-(ns konkan.core)
+(ns konkan.core
+  (:require [konkan.web :as web]
+            [konkan.config :as config]
+            [konkan.db.pool :as db-pool]
+            [ring.adapter.jetty :as jetty]))
 
 (defn -main
-  "I don't do a whole lot."
   [& args]
-  (println "Hello, World!"))
+  (config/init!)
+  (db-pool/init!)
+  (jetty/run-jetty web/handler (config/http-spec)))
