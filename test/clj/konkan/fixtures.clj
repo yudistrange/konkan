@@ -11,7 +11,6 @@
   (test))
 
 (defn wrap-transaction [test]
-  (jdbc/with-transaction [txn (db-pool/get-connection)]
-    [:rollback-only true]
+  (jdbc/with-transaction [txn (db-pool/get-connection) {:rollback-only true}]
     (with-redefs [db-pool/get-connection (fn [] txn)]
       (test))))
