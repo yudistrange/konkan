@@ -1,0 +1,10 @@
+;; resources/migrations/002-words.edn
+{:up   ["CREATE TABLE words (id serial primary key,
+                             word text not null,
+                             language_id serial references languages(id),
+                             meaning text not null,
+                             metadata json,
+                             created_at timestamp with time zone default now(),
+                             updated_at timestamp with time zone default now(),
+                             unique(word, language_id));"]
+ :down ["DROP TABLE words;"]}
