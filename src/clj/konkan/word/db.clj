@@ -1,22 +1,16 @@
 (ns konkan.word.db
   (:require [next.jdbc.sql :as sql]
-            [konkan.db.core]))
+            [konkan.util :as util]))
 
 (defn create [conn word language-id meaning metadata]
-  (try
+  (util/safely-execute
     (sql/insert! conn :words
-     {:word word :language_id language-id :meaning meaning :metadata metadata})
-    (catch Exception e
-      {:exception e :message (.getMessage e)})))
+     {:word word :language_id language-id :meaning meaning :metadata metadata})))
 
 (defn get
   ([conn word]
-   (try
-     (sql/find-by-keys conn :words {:word word})
-     (catch Exception e
-       {:exception e :message (.getMessage e)})))
+   (util/safely-execute
+     (sql/find-by-keys conn :words {:word word})))
   ([conn word lang-id]
-   (try
-     (sql/find-by-keys conn :words {:word word :language_id lang-id})
-     (catch Exception e
-       {:exception e :message (.getMessage e)}))))
+   (util/safely-execute
+     (sql/find-by-keys conn :words {:word word :language_id lang-id}))))
