@@ -43,9 +43,7 @@
       (is word
           (word-db/get (db-pool/get-connection) "hello"))
       (is word
-          (word-db/get (db-pool/get-connection) "hello" lang-id))
-      (prn word)
-      (prn word2)))
+          (word-db/get (db-pool/get-connection) "hello" lang-id))))
 
   (testing "Should get empty vector for non-existent words"
     (is []
