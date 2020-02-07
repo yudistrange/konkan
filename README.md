@@ -17,6 +17,12 @@ profile=test lein test
 ```
 Please note that `profile` environment var needs to be set for the tests to run against the test database. By default `profile` is set to dev, thus `lein test` in isolation will run the tests against the development database
 
+## Development Setup for the frontend
+The project uses shadow-cljs for building/releasing the frontend application. The repl can be started as:
+```
+shadow-cljs cljs-repl konkan-ui
+```
+
 ## License
 
 Copyright © 2019 udit
