@@ -3,6 +3,20 @@
 
 Learn you some konkani for good
 
+The project is a glorified dictionary.
+
+## Development Setup
+```
+make dev-setup
+```
+This should bring up local dependencies required by the application. The configurations are present in the `resources/config.edn` file.
+
+## Running tests
+```
+profile=test lein test
+```
+Please note that `profile` environment var needs to be set for the tests to run against the test database. By default `profile` is set to dev, thus `lein test` in isolation will run the tests against the development database
+
 ## License
 
 Copyright © 2019 udit
