@@ -17,6 +17,7 @@
 
                  [org.clojure/data.json "0.2.7"]]
   :repl-options {:init-ns konkan.core}
+  :plugins [[cider/cider-nrepl "0.23.0"]]
   :main konkan.core
   :source-paths ["src/clj" "src/cljs"]
   :test-paths ["test/clj" "test/cljs"])
