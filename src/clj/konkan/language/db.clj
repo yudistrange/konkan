@@ -1,14 +1,11 @@
 (ns konkan.language.db
-  (:require [next.jdbc :as jdbc]))
+  (:require [next.jdbc.sql :as sql]
+            [konkan.util :as util]))
 
 (defn create [conn name]
-  (try
-    (jdbc/execute! conn ["insert into languages (name) values (?)" name] {:return-keys true})
-    (catch Exception e
-      {:exception e :message (.getMessage e)})))
+  (util/safely-execute
+    (sql/insert! conn :languages {:name name})))
 
 (defn get [conn name]
-  (try
-    (jdbc/execute! conn ["select * from languages where name = ?" name])
-    (catch Exception e
-      {:exception e :message (.getMessage e)})))
+  (util/safely-execute
+    (sql/find-by-keys conn :languages {:name name})))

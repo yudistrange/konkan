@@ -21,7 +21,7 @@
                   :server-name       "localhost"
                   :port-number       13200
                   :register-mbeans   false}
-           :ci {:auto-commit       true
+           :ci   {:auto-commit       true
                   :minimum-idle      10
                   :maximum-pool-size 10
                   :pool-name         "db-pool-ci"
@@ -30,4 +30,8 @@
                   :password          "ci"
                   :database-name     "konkan_ci"
                   :port-number       5432
-                  :register-mbeans   false}}}
+                  :register-mbeans   false}}
+ :http-spec
+ #profile {:dev  {:port 3000}
+           :test {:port 3100}
+           :ci   {:port 3000}}}

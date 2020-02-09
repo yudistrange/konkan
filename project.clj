@@ -9,8 +9,16 @@
                  [seancorfield/next.jdbc "1.0.10" :exclusions [org.clojure/clojure]]
                  [aero "1.1.3"]
                  [hikari-cp "2.9.0"]
-                 [ragtime "0.8.0"]]
+                 [ragtime "0.8.0"]
+
+                 [ring/ring-core "1.8.0"]
+                 [ring/ring-jetty-adapter "1.8.0"]
+                 [ring/ring-json "0.5.0"]
+                 [bidi "2.1.6"]
+
+                 [org.clojure/data.json "0.2.7"]]
   :repl-options {:init-ns konkan.core}
+  :plugins [[cider/cider-nrepl "0.23.0"]]
   :main konkan.core
   :source-paths ["src/clj" "src/cljs"]
   :test-paths ["test/clj" "test/cljs"])
