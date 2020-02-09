@@ -13,6 +13,7 @@
 
                  [ring/ring-core "1.8.0"]
                  [ring/ring-jetty-adapter "1.8.0"]
+                 [ring/ring-json "0.5.0"]
                  [bidi "2.1.6"]
 
                  [org.clojure/data.json "0.2.7"]]
